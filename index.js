@@ -1,17 +1,29 @@
 module.exports = {
-  purge: ["./src/**/*.js*"],
+  purge: ["./src/**/*.js*", "./packages/**/src/**/*.js*"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       transparent: "transparent",
       black: "#201024",
-      white: "#ffffff",
+      white: "#FFFEFE",
       gray: {
-        light: "#F3F2F3",
-        DEFAULT: "#AAA4AB",
-        dark: "#726371"
+        100: "#f3f2f3",
+        200: "#dddadd",
+        300: "#c9c5c9",
+        400: "#b3adb3",
+        500: "#9d959d",
+        600: "#877d87",
+        700: "#726972",
+        800: "#5a535a",
+        900: "#423d42"
       },
-      accent: "#DC4556",
+      brand: "#DC4556",
+      accent: "#3B1054",
+      action: "#3523B8",
+      success: "#18A807",
+      error: "#F30007",
+      warning: "#D37C12",
+      informational: "#0D57A3",
       red: {
         light: "#F59AA5",
         DEFAULT: "#DC4556",
@@ -54,42 +66,71 @@ module.exports = {
     },
     extend: {
       typography: theme => ({
-        sm: { css: { fontFamily: theme("fontFamily.sans") } },
+        sm: {
+          css: {
+            fontFamily: theme("fontFamily.sans"),
+            h1: {
+              fontFamily: theme("fontFamily.sans"),
+              fontWeight: 700
+            },
+            h2: {
+              fontFamily: theme("fontFamily.sans"),
+              fontWeight: 700
+            },
+            h3: {
+              fontFamily: theme("fontFamily.sans"),
+              fontWeight: 700
+            },
+            h4: {
+              fontFamily: theme("fontFamily.sans"),
+              fontWeight: 700
+            },
+            h5: {
+              fontFamily: theme("fontFamily.sans"),
+              fontWeight: 700
+            },
+            h6: {
+              fontFamily: theme("fontFamily.sans"),
+              fontWeight: 700
+            }
+          }
+        },
         DEFAULT: {
           css: {
             color: theme("colors.black"),
             fontFamily: theme("fontFamily.serif"),
             a: {
-              color: theme("colors.black"),
-              fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 500,
+              color: theme("colors.action"),
+              fontWeight: "bold",
+              textDecoration: "none",
               "&:hover": {
-                color: theme("colors.accent")
+                color: theme("colors.accent"),
+                textDecoration: "underline"
               }
             },
             h1: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 300
+              fontWeight: 500
             },
             h2: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 700
+              fontWeight: 400
             },
             h3: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 900
+              fontWeight: 500
             },
             h4: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 900
+              fontWeight: 400
             },
             h5: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 700
+              fontWeight: 400
             },
             h6: {
               fontFamily: theme("fontFamily.rubik"),
-              fontWeight: 700
+              fontWeight: 300
             },
             table: {
               fontFamily: theme("fontFamily.sans")
